@@ -8,15 +8,16 @@ import { ReportService } from 'src/report/report.service';
 export class SummaryService {
   constructor(private readonly reportService: ReportService) {}
 
-  getCalculatedSummary(): Summary {
-    const allIncomes: any = this.reportService.getReportByType(
+  async getCalculatedSummary(): Promise<Summary> {
+    const allIncomes: any = await this.reportService.getReportByType(
       ReportType.INCOME,
     );
+
     const totalIncome = allIncomes.reduce((sum: number, report: ReportData) => {
       return sum + report.amount;
     }, 0);
 
-    const allExpense: any = this.reportService.getReportByType(
+    const allExpense: any = await this.reportService.getReportByType(
       ReportType.EXPENSE,
     );
     const totalExpense: number = allExpense.reduce(

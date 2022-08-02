@@ -7,7 +7,7 @@ export class SummaryController {
   constructor(private readonly summaryService: SummaryService) {}
 
   @Get()
-  getCalculatedSummary(): Summary {
+  getCalculatedSummary(): Promise<Summary> {
     return this.summaryService.getCalculatedSummary();
   }
 }

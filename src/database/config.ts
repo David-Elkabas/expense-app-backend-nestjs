@@ -1,5 +1,4 @@
 import { Knex } from 'knex';
-import { blah } from 'src/config/config';
 
 // export const KNEX_CONFIG: Knex.Config = {
 //   client: 'pg',
