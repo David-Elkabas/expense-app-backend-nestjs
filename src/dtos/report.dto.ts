@@ -5,7 +5,6 @@ import {
   IsPositive,
   IsString,
 } from 'class-validator';
-import { isTypedArray } from 'util/types';
 
 export class CreateReportDto {
   // for validate that the user don't send any forbidden data.
